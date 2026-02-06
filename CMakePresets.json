@@ -64,6 +64,36 @@
                 "CMAKE_C_COMPILER": "clang",
                 "CMAKE_CXX_COMPILER": "clang++"
             }
+        },
+        {
+            "name": "clangcl-debug",
+            "displayName": "Clang-CL Debug",
+            "inherits": "base",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            },
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_C_COMPILER": "clang-cl",
+                "CMAKE_CXX_COMPILER": "clang-cl"
+            }
+        },
+        {
+            "name": "clangcl-release",
+            "displayName": "Clang-CL Release",
+            "inherits": "base",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            },
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_C_COMPILER": "clang-cl",
+                "CMAKE_CXX_COMPILER": "clang-cl"
+            }
         }
     ],
     "buildPresets": [
@@ -82,6 +112,14 @@
         {
             "name": "clang-release",
             "configurePreset": "clang-release"
+        },
+        {
+            "name": "clangcl-debug",
+            "configurePreset": "clangcl-debug"
+        },
+        {
+            "name": "clangcl-release",
+            "configurePreset": "clangcl-release"
         }
     ]
 }

@@ -13,3 +13,10 @@ add_executable(GameA
 )
 
 target_link_libraries(GameA PRIVATE engine)
+
+target_sources(GameA PRIVATE src/pch.cpp)
+
+target_precompile_headers(GameA
+    PRIVATE
+    $<$<COMPILE_LANGUAGE:CXX>:src/pch.h>
+)
