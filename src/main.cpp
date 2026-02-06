@@ -3,6 +3,7 @@
 #include <engine/prelude.hpp>
 #include <engine/events/window_events.hpp>
 #include <engine/events/input_events.hpp>
+#include <engine/events/update_event.hpp>
 
 int main(int argc, char *argv[])
 {
@@ -23,6 +24,10 @@ int main(int argc, char *argv[])
                                                                { std::cout << "Key Pressed! " << engine::input::KeyToString(e.Data) << '\n'; });
     app->m_EventDispatcher->Subscribe<engine::KeyReleasedEvent>([](const engine::KeyReleasedEvent &e)
                                                                 { std::cout << "Key Released! " << engine::input::KeyToString(e.Data) << '\n'; });
+    app->m_EventDispatcher->Subscribe<engine::UpdateEvent>([&](const engine::UpdateEvent &e)
+                                                           {
+                                                               std::cout << "Keystate A: " << ((int)app->m_InputStates->GetState(engine::input::Key::kA) ? "Pressed" : "Unpressed") << '\n';
+                                                               std::cout << "Update! " << e.DeltaTime << '\n'; });
 
     app->Run();
 }
