@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include <engine/application/application.hpp>
+#include <engine/prelude.hpp>
 
 int main(int argc, char *argv[])
 {
