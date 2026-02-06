@@ -16,6 +16,8 @@ int main(int argc, char *argv[])
 
     app->m_EventDispatcher->Subscribe<engine::WindowOpenedEvent>([](const engine::WindowOpenedEvent &e)
                                                                  { std::cout << "Window Opened! " << e.Data << '\n'; });
+    app->m_EventDispatcher->Subscribe<engine::WindowDestroyedEvent>([](const engine::WindowDestroyedEvent &e)
+                                                                    { std::cout << "Window Destroyed! " << e.Data << '\n'; });
 
     app->Run();
 }
