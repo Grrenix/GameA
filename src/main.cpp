@@ -1,9 +1,9 @@
 #include <iostream>
 
 #include <engine/prelude.hpp>
-#include <engine/events/window_events.hpp>
-#include <engine/events/input_events.hpp>
-#include <engine/events/update_event.hpp>
+#include <events/window_events.hpp>
+#include <events/input_events.hpp>
+#include <events/update_event.hpp>
 
 int main(int argc, char *argv[])
 {
