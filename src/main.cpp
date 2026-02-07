@@ -17,9 +17,9 @@ int main(int argc, char *argv[])
     engine::Application *app = engine::Application::New()->WithWindowSpec(&windowSpec);
 
     app->m_EventDispatcher->Subscribe<engine::WindowOpenedEvent>([](const engine::WindowOpenedEvent &e)
-                                                                 { std::cout << "Window Opened! " << e.Data->GetWindowHandle() << '\n'; });
+                                                                 { std::cout << "Window Opened!" << '\n'; });
     app->m_EventDispatcher->Subscribe<engine::WindowDestroyedEvent>([](const engine::WindowDestroyedEvent &e)
-                                                                    { std::cout << "Window Destroyed! " << e.Data->GetWindowHandle() << '\n'; });
+                                                                    { std::cout << "Window Destroyed!" << '\n'; });
     app->m_EventDispatcher->Subscribe<engine::KeyPressedEvent>([](const engine::KeyPressedEvent &e)
                                                                { std::cout << "Key Pressed! " << engine::input::KeyToString(e.Data) << '\n'; });
     app->m_EventDispatcher->Subscribe<engine::KeyReleasedEvent>([](const engine::KeyReleasedEvent &e)
