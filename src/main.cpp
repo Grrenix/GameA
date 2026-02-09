@@ -47,12 +47,7 @@ int main(int argc, char *argv[])
     app->m_EventDispatcher->Subscribe<engine::UpdateEvent>(
         [&](const engine::UpdateEvent &e)
         {
-            engine::input::KeyState buttonStateA = app->m_InputStates->GetState(engine::input::Key::kA);
-            if (buttonStateA == engine::input::KeyState::Pressed)
-            {
-                std::cout << "A is pressed" << '\n';
-            }
-            // std::cout << "Update! " << e.DeltaTime << '\n';
+            std::cout << "Update! " << 1.0f / e.DeltaTime << " fps" << '\n';
         });
 
     app->Run();
