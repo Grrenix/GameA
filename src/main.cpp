@@ -51,4 +51,5 @@ int main(int argc, char *argv[])
         });
 
     app->Run();
+    engine::Application::Destroy();
 }
