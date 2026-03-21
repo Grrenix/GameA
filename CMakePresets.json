@@ -12,7 +12,12 @@
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/${presetName}",
             "cacheVariables": {
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_VS_PLATFORM_NAME": "x64"
+            },
+            "architecture": {
+                "value": "x64",
+                "strategy": "external"
             }
         },
         {
